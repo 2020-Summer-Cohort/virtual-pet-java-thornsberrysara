@@ -3,6 +3,7 @@ package virtual_pet;
 import java.util.Random;
 
 public class VirtualPet {
+
     void petStatus() {
         System.out.println("Hunger: " + hunger);
         System.out.println("Thirst: " + thirst);
@@ -68,8 +69,12 @@ public class VirtualPet {
         this.tiredness = newTiredness;
     }
 
-    //Case Statements
-
+    public void tick() {
+        hunger = hunger - 7;
+        thirst = thirst - 9;
+        boredom = boredom - 4;
+        tiredness = tiredness - 3;
+    }
 
 
 }

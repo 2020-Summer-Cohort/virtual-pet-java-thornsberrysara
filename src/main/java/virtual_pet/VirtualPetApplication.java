@@ -18,6 +18,7 @@ public class VirtualPetApplication {
 
         int select;
         virtualPet.petStatus();
+        virtualPet.tick();
 
 
         do {
@@ -30,58 +31,48 @@ public class VirtualPetApplication {
 
             select = input.nextInt();
 
-
-            if (select == 1) {
-                System.out.println("Thank you for the delicious meal!");
-                int hunger = virtualPet.getHunger();
-                int thirst = virtualPet.getThirst();
-                virtualPet.setHunger(hunger + 15);
-                virtualPet.setThirst(thirst - 5);
-                if (virtualPet.getHunger() > 100) {
-                    System.out.println("Whoa, my belly hurts. I can't eat another bite.");
-                    continue;
-                }
-            } else if (select == 2) {
-                System.out.println("Thank you for my drink!");
-                int thirst = virtualPet.getThirst();
-                int hunger = virtualPet.getHunger();
-                virtualPet.setThirst(thirst + 10);
-                virtualPet.setHunger(hunger - 3);
-                if (virtualPet.getThirst() > 100) {
-                    System.out.println("You're gonna make me have an accident!");
-                    continue;
-                }
-            } else if (select == 3) {
-                System.out.println("Yay! I love to play!");
-                int boredom = virtualPet.getBoredom();
-                int hunger = virtualPet.getHunger();
-                int thirst = virtualPet.getThirst();
-                virtualPet.setBoredom(boredom + 25);
-                virtualPet.setHunger(hunger - 5);
-                virtualPet.setThirst(thirst - 7);
-                if (virtualPet.getBoredom() > 100) {
-                    System.out.println("Too...tired...to play. I need a good Emu nap!");
-                    continue;
-                }
-            } else if (select == 4) {
-                System.out.println("I'm whooped...goodnight!");
-                int tiredness = virtualPet.getTiredness();
-                int boredom = virtualPet.getBoredom();
-                virtualPet.setTiredness(tiredness + 30);
-                virtualPet.setBoredom(boredom - 8);
-                if (virtualPet.getTiredness() > 100) {
-                    System.out.println("I'm ready to get up!");
-                    continue;
-                }
-            } else if (select == 0) {
-                System.out.println("You're leaving already? See you soon!");
-                return;
-            }
+            petAction(select, virtualPet);
 
             virtualPet.petStatus();
+            virtualPet.tick();
 
         } while (select != 0);
 
 
+    }
+
+    public static void petAction(int select, VirtualPet virtualPet) {
+
+        if (select == 1) {
+            System.out.println("Thank you for the delicious meal!");
+            int hunger = virtualPet.getHunger();
+            virtualPet.setHunger(hunger + 15);
+            if (virtualPet.getHunger() > 100) {
+                System.out.println("Whoa, my belly hurts. I can't eat another bite.");
+            }
+        } else if (select == 2) {
+            System.out.println("Thank you for my drink!");
+            int thirst = virtualPet.getThirst();
+            virtualPet.setThirst(thirst + 10);
+            if (virtualPet.getThirst() > 100) {
+                System.out.println("You're gonna make me have an accident!");
+            }
+        } else if (select == 3) {
+            System.out.println("Yay! I love to play!");
+            int boredom = virtualPet.getBoredom();
+            virtualPet.setBoredom(boredom + 25);
+            if (virtualPet.getBoredom() > 100) {
+                System.out.println("Too...tired...to play. I need a good Emu nap!");
+            }
+        } else if (select == 4) {
+            System.out.println("I'm whooped...goodnight!");
+            int tiredness = virtualPet.getTiredness();
+            virtualPet.setTiredness(tiredness + 30);
+            if (virtualPet.getTiredness() > 100) {
+                System.out.println("I'm ready to get up!");
+            }
+        } else if (select == 0) {
+            System.out.println("You're leaving already? See you soon!");
+        }
     }
 }
