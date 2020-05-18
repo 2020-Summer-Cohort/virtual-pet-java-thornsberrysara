@@ -6,6 +6,26 @@ public class VirtualPetApplication {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        System.out.println("                                __\n" +
+                "                               (oo)\n" +
+                "                                \\/\n" +
+                "                                ||\n" +
+                "                                ||\n" +
+                "                                ||,-v-,_\n" +
+                "                                ||\\ |   /\n" +
+                "                            _,'\"  \"'-,-<\n" +
+                "                           / :       /  \\\n" +
+                "                          ( :       (   /,\n" +
+                "                           \\_;       \\ __)\n" +
+                "                              \\,_ ,   |\n" +
+                "                              |  / \\  |\n" +
+                "                              | /   \\ |\n" +
+                "                              ()     ()\n" +
+                "                              //     ||\n" +
+                "                             //      ||\n" +
+                "                            //       ||\n" +
+                "              -- '' -'-'  ,//        /\\   -- '' -'-'   miK\n" +
+                "                          ^^         '^^\n");
         System.out.println("Congratulations on your baby Emu! Please type in what you would like to name them.");
         String petName = input.nextLine();
         VirtualPet virtualPet = new VirtualPet(petName);
@@ -13,13 +33,10 @@ public class VirtualPetApplication {
         System.out.println("Awww, " + petName + " is sooo cute!");
         System.out.println("It's super important for you to care for " + petName +
                 "." + '\n' + "To keep them happy, you must try to keep all of their levels " +
-                "above 50, but less than 100.");
-
+                "above 0, but less than 100.");
 
         int select;
         virtualPet.petStatus();
-        virtualPet.tick();
-
 
         do {
             System.out.println("What would you like to do with " + petName + "?");
@@ -32,13 +49,11 @@ public class VirtualPetApplication {
             select = input.nextInt();
 
             petAction(select, virtualPet);
-
-            virtualPet.petStatus();
             virtualPet.tick();
+            virtualPet.petStatus();
+            virtualPet.checkHealth();
 
         } while (select != 0);
-
-
     }
 
     public static void petAction(int select, VirtualPet virtualPet) {
