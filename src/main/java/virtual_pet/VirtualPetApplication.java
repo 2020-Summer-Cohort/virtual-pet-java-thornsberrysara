@@ -2,8 +2,6 @@ package virtual_pet;
 
 import java.util.Scanner;
 
-<<<<<<< Updated upstream
-=======
 /*
  * I love the emu theme!!!  There is a couple things I would like to see improved in this app though.
  * Clean Code:
@@ -18,7 +16,7 @@ import java.util.Scanner;
  * should probably go down and not up.  If you are up for changing that please do so, but the clean code is what we will
  * be looking to be addressed.
  */
->>>>>>> Stashed changes
+
 public class VirtualPetApplication {
 
     public static void main(String[] args) {
