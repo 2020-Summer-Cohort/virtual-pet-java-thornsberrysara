@@ -13,7 +13,7 @@ public class VirtualPetTest {
         int hungerBeforePetAction = virtualPet.getHunger();
         petAction(1, virtualPet);
         int hungerAfterPetAction = virtualPet.getHunger();
-        assertEquals(hungerBeforePetAction, hungerAfterPetAction - 15);
+        assertEquals(hungerBeforePetAction, hungerAfterPetAction + 15);
     }
 
     @Test
@@ -21,7 +21,7 @@ public class VirtualPetTest {
         int thirstBeforePetAction = virtualPet.getThirst();
         petAction(2, virtualPet);
         int thirstAfterPetAction = virtualPet.getThirst();
-        assertEquals(thirstBeforePetAction, thirstAfterPetAction - 10);
+        assertEquals(thirstBeforePetAction, thirstAfterPetAction + 10);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class VirtualPetTest {
         int boredomBeforePetAction = virtualPet.getBoredom();
         petAction(3, virtualPet);
         int boredomAfterPetAction = virtualPet.getBoredom();
-        assertEquals(boredomBeforePetAction, boredomAfterPetAction - 25);
+        assertEquals(boredomBeforePetAction, boredomAfterPetAction + 25);
     }
 
     @Test
@@ -37,6 +37,6 @@ public class VirtualPetTest {
         int tirednessBeforePetAction = virtualPet.getTiredness();
         petAction(4, virtualPet);
         int tirednessAfterPetAction = virtualPet.getTiredness();
-        assertEquals(tirednessBeforePetAction, tirednessAfterPetAction - 30);
+        assertEquals(tirednessBeforePetAction, tirednessAfterPetAction + 30);
     }
 }

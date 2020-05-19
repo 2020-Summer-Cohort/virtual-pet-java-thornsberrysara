@@ -4,6 +4,12 @@ import java.util.Random;
 
 public class VirtualPet {
 
+    public String name;
+    public int hunger;
+    public int thirst;
+    public int boredom;
+    public int tiredness;
+
     void petStatus() {
         System.out.println("Hunger: " + hunger);
         System.out.println("Thirst: " + thirst);
@@ -11,17 +17,11 @@ public class VirtualPet {
         System.out.println("Tiredness: " + tiredness);
     }
     void checkHealth() {
-        if (hunger <= 0 || thirst <= 0 || boredom <= 0 || tiredness <= 0) {
+        if (hunger > 100 || thirst > 100 || boredom > 100 || tiredness > 100) {
             System.out.println("I'm running away from home!");
             System.exit(0);
         }
     }
-
-    public String name;
-    public int hunger;
-    public int thirst;
-    public int boredom;
-    public int tiredness;
 
     Random rand = new Random();
 
@@ -54,34 +54,41 @@ public class VirtualPet {
         return tiredness;
     }
 
-    //Setter
-    public void setName(String newName) {
-        this.name = newName;
+
+    public void feed() {
+        hunger = hunger - 15;
+        if (getHunger() < 0) {
+            System.out.println("Whoa, my belly hurts. I can't eat another bite.");
+        }
     }
 
-    public void setHunger(int newHunger) {
-        this.hunger = newHunger;
+    public void drink() {
+        thirst = thirst - 10;
+        if (getThirst() < 0) {
+            System.out.println("You're gonna make me have an accident!");
+        }
     }
 
-    public void setThirst(int newThirst) {
-        this.thirst = newThirst;
+    public void play() {
+        boredom = boredom - 25;
+        if (getBoredom() < 0) {
+            System.out.println("Too...tired...to play. I need a good Emu nap!");
+        }
     }
 
-    public void setBoredom(int newBoredom) {
-        this.boredom = newBoredom;
-    }
-
-    public void setTiredness(int newTiredness) {
-        this.tiredness = newTiredness;
+    public void sleep() {
+        tiredness = tiredness - 30;
+        if (getTiredness() < 0) {
+            System.out.println("I'm ready to get up!");
+        }
     }
 
     public void tick() {
-        hunger = hunger - 7;
-        thirst = thirst - 9;
-        boredom = boredom - 4;
-        tiredness = tiredness - 3;
+        hunger = hunger + 7;
+        thirst = thirst + 5;
+        boredom = boredom + 4;
+        tiredness = tiredness + 3;
     }
-
-
 }
+
 
