@@ -1,7 +1,20 @@
 package virtual_pet;
 
 import java.util.Scanner;
-
+/*
+ * I love the emu theme!!!  There is a couple things I would like to see improved in this app though.
+ * Clean Code:
+ * 1 - Remove the setter methods in the VirtualPet class and replace them with methods like feed() or drink().  This will
+ *     allow you to put the logic of how the pets fields are changed back into the VirtualPet class and out of the
+ *     VirtualPetApplication's petAction() method.
+ * 2 - In the VirtualPet class you have a couple methods at the top of the class.  It's almost a universal practice to
+ *     have the fields on the top of the class and the methods after the field declarations.  I would move those methods
+ *     to comply with this practice.
+ * Good job on the Working Software part, the only change I would ask for on how the app works is that when you feed or
+ * take an action to meet a need that you consider what direction the attribute moves.  If you feed an emu his hunger
+ * should probably go down and not up.  If you are up for changing that please do so, but the clean code is what we will
+ * be looking to be addressed.
+ */
 public class VirtualPetApplication {
 
     public static void main(String[] args) {

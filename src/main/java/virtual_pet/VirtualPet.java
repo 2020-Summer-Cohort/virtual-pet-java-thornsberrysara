@@ -10,6 +10,7 @@ public class VirtualPet {
         System.out.println("Boredom: " + boredom);
         System.out.println("Tiredness: " + tiredness);
     }
+
     void checkHealth() {
         if (hunger <= 0 || thirst <= 0 || boredom <= 0 || tiredness <= 0) {
             System.out.println("I'm running away from home!");
